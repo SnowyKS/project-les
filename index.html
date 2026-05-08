@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WoodHouse — строительство деревянных домов под ключ. Каркасные дома, срубы, бани с гарантией качества и прозрачными сроками.">
+  <meta name="keywords" content="деревянные дома, каркасные дома, срубы, бани, строительство под ключ, дома из дерева">
+  <meta property="og:title" content="WoodHouse — Дома из дерева, в которых хочется жить">
+  <meta property="og:description" content="Строим современные деревянные дома под ключ с гарантией и прозрачными сроками">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:url" content="https://woodhouse-doma.ru/">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="WoodHouse">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WoodHouse — Дома из дерева, в которых хочется жить">
+  <meta name="twitter:description" content="Строим современные деревянные дома под ключ с гарантией и прозрачными сроками">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1200&q=80">
+  <link rel="canonical" href="https://woodhouse-doma.ru/">
+  <title>WoodHouse — Дома из дерева, в которых хочется жить</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "WoodHouse",
+    "description": "Строительство деревянных домов под ключ. Каркасные дома, срубы, бани с гарантией качества.",
+    "url": "https://woodhouse-doma.ru",
+    "logo": "https://woodhouse-doma.ru/img/favicon.svg",
+    "image": "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1200&q=80",
+    "telephone": "+7 (800) 123-45-67",
+    "email": "info@woodhouse-doma.ru",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Москва",
+      "addressCountry": "RU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "55.7558",
+      "longitude": "37.6173"
+    },
+    "areaServed": "RU",
+    "priceRange": "$$",
+    "openingHours": "Mo-Sa 09:00-20:00",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "247"
+    },
+    "sameAs": [
+      "https://t.me/ksncidncsncd_bot"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Сколько стоит фундамент для деревянного дома?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Свайно-винтовой — от 80 000 рублей, ленточный — от 150 000 рублей, монолитная плита — от 300 000 рублей. Тип подбирается после геологии участка бесплатно."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Даёте ли рассрочку или ипотеку на строительство?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да, работаем с банками: Сбер, ВТБ, Дом.РФ. Ипотека от 6%, сельская ипотека до 3%. Рассрочка от компании: 30% аванс, остаток поэтапно."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Сколько времени занимает строительство под ключ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Каркасный дом 65 м² — 45 дней. Дом из бруса 120 м² — 90 дней. Клеёный брус 180 м² — 120 дней. Сроки фиксируются в договоре."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Какую гарантию вы даёте на дом?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "5 лет на конструктив, 3 года на инженерные системы, 1 год на отделку. Гарантия в договоре, выезд по дефектам в течение 3 дней."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Можно ли строить деревянный дом зимой?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да, строим круглый год. Зимний лес суше и качественнее. Сваи вкручиваем при -40°C, фундамент заливаем с подогревом. Срок 3-5 месяцев."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Promo timer banner -->
+  <div class="promo-banner" id="promoBanner">
+    <div class="container promo-banner__inner">
+      <span class="promo-banner__text">🎁 Скидка <strong>5%</strong> на любой проект — предложение действует:</span>
+      <div class="promo-banner__timer">
+        <div class="timer-block"><span id="timerD">02</span><small>дн</small></div>
+        <div class="timer-sep">:</div>
+        <div class="timer-block"><span id="timerH">14</span><small>ч</small></div>
+        <div class="timer-sep">:</div>
+        <div class="timer-block"><span id="timerM">23</span><small>мин</small></div>
+        <div class="timer-sep">:</div>
+        <div class="timer-block"><span id="timerS">45</span><small>сек</small></div>
+      </div>
+      <a href="#quiz" class="btn btn--primary btn--sm promo-banner__btn">Получить скидку</a>
+      <button class="promo-banner__close" id="promoBannerClose" aria-label="Закрыть">✕</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════ HEADER ═══════════════════════ -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="#" class="header__logo">
+        <svg class="logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="36" height="36" rx="8" fill="rgba(74,124,89,0.15)"/>
+          <polygon points="18,5 31,16 31,30 5,30 5,16" fill="none" stroke="#4A7C59" stroke-width="1.5"/>
+          <polygon points="18,4 32,16 4,16" fill="#4A7C59"/>
+          <rect x="14" y="21" width="8" height="9" fill="#4A7C59" rx="1"/>
+        </svg>
+        <span class="logo-text">Wood<strong>House</strong></span>
+      </a>
+
+      <nav class="header__nav" id="mainNav">
+        <a href="#houses" class="nav-link">Наши дома</a>
+        <a href="#about" class="nav-link">О строительстве</a>
+        <a href="#why" class="nav-link">Почему мы</a>
+        <a href="#consultation" class="nav-link nav-link--cta">Консультация</a>
+      </nav>
+
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#houses" class="mobile-nav__link">Наши дома</a>
+    <a href="#about" class="mobile-nav__link">О строительстве</a>
+    <a href="#why" class="mobile-nav__link">Почему мы</a>
+    <a href="#consultation" class="mobile-nav__link">Консультация</a>
+  </div>
+
+  <main>
+
+    <!-- ═══════════════════════ HERO ═══════════════════════ -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" style="background-image:url('https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1920&q=80')" role="img" aria-label="Деревянный коттедж у озера"></div>
+      <div class="hero__overlay"></div>
+      <video class="hero__video" autoplay muted loop playsinline>
+        <source src="https://videos.pexels.com/video-files/3571264/3571264-hd_1920_1080_25fps.mp4" type="video/mp4">
+        <source src="https://videos.pexels.com/video-files/3196436/3196436-hd_1920_1080_25fps.mp4" type="video/mp4">
+      </video>
+      <div class="container hero__container">
+        <div class="hero__content" data-animate="fade-up">
+          <span class="section-eyebrow">Строительство под ключ</span>
+          <h1 class="hero__title">Дома из <span style="font-family:'Caveat',cursive;font-weight:700;font-size:1.25em;color:#C8853A;text-shadow:0 0 28px rgba(200,133,58,0.5);display:inline-block;transform:rotate(-1deg);line-height:0.9">дерева</span>,<br>в которых хочется жить</h1>
+          <p class="hero__subtitle">Строим современные деревянные дома под ключ с гарантией и прозрачными сроками</p>
+          <div class="hero__buttons">
+            <a href="#houses" class="btn btn--primary">Смотреть проекты</a>
+            <a href="#calculator" class="btn btn--outline">Рассчитать стоимость</a>
+          </div>
+        </div>
+
+        <div class="hero__form-wrap" data-animate="fade-up" data-delay="150">
+          <div class="glass-card">
+            <h3 class="form-title">Заявка на консультацию</h3>
+            <form class="lead-form" id="heroForm" novalidate>
+              <div class="form-group">
+                <input type="text" name="name" placeholder="Имя" required autocomplete="given-name">
+              </div>
+              <div class="form-group">
+                <input type="text" name="city" placeholder="Город" required>
+              </div>
+              <div class="form-group">
+                <input type="tel" name="phone" placeholder="Телефон" required autocomplete="tel">
+              </div>
+              <div class="form-group">
+                <input type="email" name="email" placeholder="Email" required autocomplete="email">
+              </div>
+              <button type="submit" class="btn btn--primary btn--full">Отправить</button>
+              <p class="form-disclaimer">Отправляя заявку, вы соглашаетесь с обработкой персональных данных</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ STATS ═══════════════════════ -->
+    <section class="stats-strip" id="stats">
+      <div class="container">
+        <div class="stats-strip__grid">
+          <div class="stats-strip__item" data-animate="fade-up" data-delay="0">
+            <span class="stats-strip__num" data-target="300" data-suffix="+">0</span>
+            <span class="stats-strip__label">домов построено</span>
+          </div>
+          <div class="stats-strip__item" data-animate="fade-up" data-delay="100">
+            <span class="stats-strip__num" data-target="12" data-suffix="">0</span>
+            <span class="stats-strip__label">лет на рынке</span>
+          </div>
+          <div class="stats-strip__item" data-animate="fade-up" data-delay="200">
+            <span class="stats-strip__num" data-target="98" data-suffix="%">0</span>
+            <span class="stats-strip__label">клиентов рекомендуют</span>
+          </div>
+          <div class="stats-strip__item" data-animate="fade-up" data-delay="300">
+            <span class="stats-strip__num" data-target="47" data-suffix="">0</span>
+            <span class="stats-strip__label">регионов России</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ BLOCK 2: HOUSES ═══════════════════════ -->
+    <section class="houses section" id="houses">
+      <div class="container">
+        <h2 class="section-title text-center" data-animate="fade-up">Наши проекты домов</h2>
+        <p class="section-subtitle text-center" data-animate="fade-up" data-delay="100">Каждый дом создаётся под ваш образ жизни. Нажмите на проект, чтобы узнать подробности.</p>
+
+        <div class="projects-grid">
+
+          <!-- Project 1 -->
+          <div class="project-card" data-animate="fade-up" data-delay="0" data-project="1">
+            <div class="project-card__img">
+              <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=600&q=80" alt="Проект Лесной" loading="lazy">
+              <span class="project-card__badge">Хит</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__name">Лесной</h3>
+              <div class="project-card__specs">
+                <span>120 м²</span>
+                <span>2 этажа</span>
+                <span>4 комнаты</span>
+              </div>
+              <p class="project-card__price">от 4 200 000 ₽</p>
+              <button class="btn btn--primary btn--sm project-card__btn">Подробнее</button>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card" data-animate="fade-up" data-delay="100" data-project="2">
+            <div class="project-card__img">
+              <img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=600&q=80" alt="Проект Сибирский" loading="lazy">
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__name">Сибирский</h3>
+              <div class="project-card__specs">
+                <span>180 м²</span>
+                <span>2 этажа</span>
+                <span>5 комнат</span>
+              </div>
+              <p class="project-card__price">от 6 800 000 ₽</p>
+              <button class="btn btn--primary btn--sm project-card__btn">Подробнее</button>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card" data-animate="fade-up" data-delay="200" data-project="3">
+            <div class="project-card__img">
+              <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=600&q=80" alt="Проект Дачный" loading="lazy">
+              <span class="project-card__badge project-card__badge--green">Эконом</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__name">Дачный</h3>
+              <div class="project-card__specs">
+                <span>65 м²</span>
+                <span>1 этаж</span>
+                <span>2 комнаты</span>
+              </div>
+              <p class="project-card__price">от 2 100 000 ₽</p>
+              <button class="btn btn--primary btn--sm project-card__btn">Подробнее</button>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card" data-animate="fade-up" data-delay="300" data-project="4">
+            <div class="project-card__img">
+              <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=600&q=80" alt="Проект Скандинавский" loading="lazy">
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__name">Скандинавский</h3>
+              <div class="project-card__specs">
+                <span>95 м²</span>
+                <span>1 этаж</span>
+                <span>3 комнаты</span>
+              </div>
+              <p class="project-card__price">от 3 500 000 ₽</p>
+              <button class="btn btn--primary btn--sm project-card__btn">Подробнее</button>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="project-card" data-animate="fade-up" data-delay="400" data-project="5">
+            <div class="project-card__img">
+              <img src="https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?auto=format&fit=crop&w=600&q=80" alt="Проект Премиум" loading="lazy">
+              <span class="project-card__badge project-card__badge--gold">Премиум</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__name">Премиум</h3>
+              <div class="project-card__specs">
+                <span>240 м²</span>
+                <span>2 этажа</span>
+                <span>6 комнат</span>
+              </div>
+              <p class="project-card__price">от 9 500 000 ₽</p>
+              <button class="btn btn--primary btn--sm project-card__btn">Подробнее</button>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="project-card" data-animate="fade-up" data-delay="500" data-project="6">
+            <div class="project-card__img">
+              <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=600&q=80" alt="Проект Шале" loading="lazy">
+              <span class="project-card__badge project-card__badge--gold">Новинка</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__name">Шале</h3>
+              <div class="project-card__specs">
+                <span>160 м²</span>
+                <span>2 этажа</span>
+                <span>4 комнаты</span>
+              </div>
+              <p class="project-card__price">от 7 200 000 ₽</p>
+              <button class="btn btn--primary btn--sm project-card__btn">Подробнее</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="quality-grid" data-animate="fade-up">
+          <div class="quality-item">
+            <span class="quality-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </span>
+            <span>Собственное производство</span>
+          </div>
+          <div class="quality-item">
+            <span class="quality-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <span>Натуральные материалы</span>
+          </div>
+          <div class="quality-item">
+            <span class="quality-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            </span>
+            <span>Строительство под ключ</span>
+          </div>
+          <div class="quality-item">
+            <span class="quality-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </span>
+            <span>Поддержка на всех этапах</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ PROJECT MODAL ═══════════════════════ -->
+    <div class="project-modal" id="projectModal">
+      <div class="project-modal__overlay"></div>
+      <div class="project-modal__container">
+        <button class="project-modal__close" aria-label="Закрыть">&times;</button>
+
+        <!-- Modal Hero -->
+        <div class="project-modal__hero">
+          <img id="modalHeroImg" src="" alt="">
+          <div class="project-modal__hero-overlay">
+            <h2 id="modalTitle" class="project-modal__title"></h2>
+            <p id="modalPrice" class="project-modal__price"></p>
+          </div>
+        </div>
+
+        <!-- Specs -->
+        <div class="project-modal__specs" id="modalSpecs"></div>
+
+        <!-- Description -->
+        <div class="project-modal__section">
+          <h3>О проекте</h3>
+          <p id="modalDesc"></p>
+        </div>
+
+        <!-- Gallery — only this project's photos -->
+        <div class="project-modal__section">
+          <h3>Фотографии этого дома</h3>
+          <div class="project-modal__gallery" id="modalGallery"></div>
+        </div>
+
+        <!-- Story — client interaction -->
+        <div class="project-modal__section">
+          <h3>История проекта</h3>
+          <div id="modalStory"></div>
+        </div>
+
+        <!-- Stages — unique per project -->
+        <div class="project-modal__section">
+          <h3>Этапы строительства</h3>
+          <div class="project-modal__stages" id="modalStages"></div>
+        </div>
+
+        <!-- CTA -->
+        <div class="project-modal__cta">
+          <a href="#quiz" class="btn btn--primary btn--lg project-modal__cta-btn">Рассчитать стоимость этого проекта</a>
+          <a href="#consultation" class="btn btn--outline btn--lg">Задать вопрос</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════ BLOCK 3: PROBLEMS ═══════════════════════ -->
+    <section class="problems section" id="about">
+      <div class="container">
+        <h2 class="section-title text-center" data-animate="fade-up">Какие задачи мы решаем для клиентов?</h2>
+
+        <!-- Problem 1 -->
+        <div class="problem-item" data-animate="fade-up">
+          <div class="problem-item__text">
+            <h3 class="problem-item__title">Дом для постоянного проживания</h3>
+            <p>Хотите переехать за город и жить в экологичном доме круглый год?</p>
+            <p><strong>Основные задачи:</strong><br>— тепло зимой и прохлада летом<br>— энергоэффективность<br>— комфорт для всей семьи</p>
+            <p><strong>Что мы делаем:</strong><br>Проектируем и строим дома с учётом климата, утепления и инженерии, чтобы вы могли жить комфортно в любое время года.</p>
+          </div>
+          <div class="problem-item__image">
+            <img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=800&q=80" alt="Дом для постоянного проживания" loading="lazy">
+            <span class="problem-number">01</span>
+          </div>
+        </div>
+
+        <!-- Problem 2 -->
+        <div class="problem-item problem-item--reverse" data-animate="fade-up">
+          <div class="problem-item__image">
+            <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=800&q=80" alt="Дом для отдыха" loading="lazy">
+            <span class="problem-number">02</span>
+          </div>
+          <div class="problem-item__text">
+            <h3 class="problem-item__title">Дом для отдыха</h3>
+            <p>Мечтаете о загородном доме, куда можно приезжать в выходные и заряжаться энергией?</p>
+            <p><strong>Основные задачи:</strong><br>— быстрый прогрев после приезда<br>— минимальное обслуживание<br>— уют и атмосфера природы</p>
+            <p><strong>Что мы делаем:</strong><br>Создаём тёплые и уютные дачные дома с продуманной планировкой и системами, которые не требуют постоянного внимания.</p>
+          </div>
+        </div>
+
+        <!-- Problem 3 -->
+        <div class="problem-item" data-animate="fade-up">
+          <div class="problem-item__text">
+            <h3 class="problem-item__title">Баня или гостевой дом</h3>
+            <p>Хотите добавить к участку баню или небольшой гостевой дом?</p>
+            <p><strong>Основные задачи:</strong><br>— компактность и функциональность<br>— качественная отделка<br>— долговечность конструкции</p>
+            <p><strong>Что мы делаем:</strong><br>Строим классические бани из сруба и современные гостевые домики с учётом всех санитарных и строительных норм.</p>
+          </div>
+          <div class="problem-item__image">
+            <img src="https://images.unsplash.com/photo-1505843513577-22bb7d21e455?auto=format&fit=crop&w=800&q=80" alt="Баня или гостевой дом" loading="lazy">
+            <span class="problem-number">03</span>
+          </div>
+        </div>
+
+        <!-- Problem 4 -->
+        <div class="problem-item problem-item--reverse" data-animate="fade-up">
+          <div class="problem-item__image">
+            <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=800&q=80" alt="Дом с ограниченным бюджетом" loading="lazy">
+            <span class="problem-number">04</span>
+          </div>
+          <div class="problem-item__text">
+            <h3 class="problem-item__title">Дом с ограниченным бюджетом</h3>
+            <p>Хотите жить в деревянном доме, но беспокоитесь о стоимости?</p>
+            <p><strong>Основные задачи:</strong><br>— оптимальная стоимость строительства<br>— без потери качества<br>— прозрачная смета</p>
+            <p><strong>Что мы делаем:</strong><br>Подбираем оптимальные решения по материалам и конструкциям. Предлагаем поэтапное строительство и гибкие условия оплаты.</p>
+          </div>
+        </div>
+
+        <!-- Problem 5 -->
+        <div class="problem-item" data-animate="fade-up">
+          <div class="problem-item__text">
+            <h3 class="problem-item__title">Индивидуальный проект</h3>
+            <p>У вас уже есть идея или особые требования к дому вашей мечты?</p>
+            <p><strong>Основные задачи:</strong><br>— реализация нестандартных решений<br>— учёт особенностей участка<br>— уникальная архитектура</p>
+            <p><strong>Что мы делаем:</strong><br>Разрабатываем индивидуальный проект с нуля под ваши пожелания, бюджет и особенности земельного участка.</p>
+          </div>
+          <div class="problem-item__image">
+            <img src="https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?auto=format&fit=crop&w=800&q=80&crop=left" alt="Индивидуальный проект дома" loading="lazy">
+            <span class="problem-number">05</span>
+          </div>
+        </div>
+
+        <div class="problems__cta" data-animate="fade-up">
+          <a href="#houses" class="btn btn--primary">Смотреть проекты</a>
+          <a href="#quiz" class="btn btn--outline">Оставить заявку</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ GALLERY ═══════════════════════ -->
+    <section class="gallery section" id="gallery">
+      <div class="container">
+        <h2 class="section-title text-center" data-animate="fade-up">Галерея наших работ</h2>
+        <p class="section-subtitle text-center" data-animate="fade-up" data-delay="100">Реальные фотографии построенных нами домов</p>
+
+        <div class="gallery__grid" data-animate="fade-up" data-delay="200">
+          <!-- Row 1 -->
+          <div class="gallery__item gallery__item--wide" data-gallery="0">
+            <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=900&q=80" alt="Шале у озера" loading="lazy">
+            <div class="gallery__overlay"><span>Шале «Горное озеро»</span></div>
+          </div>
+          <div class="gallery__item" data-gallery="1">
+            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=500&q=80" alt="Дом Лесной" loading="lazy">
+            <div class="gallery__overlay"><span>Проект «Лесной» — фасад</span></div>
+          </div>
+          <div class="gallery__item" data-gallery="2">
+            <img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=500&q=80" alt="Сруб в лесу" loading="lazy">
+            <div class="gallery__overlay"><span>«Сибирский» — вид с участка</span></div>
+          </div>
+          <!-- Row 2 -->
+          <div class="gallery__item" data-gallery="3">
+            <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=500&q=80" alt="Дачный дом" loading="lazy">
+            <div class="gallery__overlay"><span>«Дачный» — летом</span></div>
+          </div>
+          <div class="gallery__item" data-gallery="4">
+            <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=500&q=80" alt="Скандинавский дом" loading="lazy">
+            <div class="gallery__overlay"><span>«Скандинавский» — минимализм</span></div>
+          </div>
+          <div class="gallery__item gallery__item--wide" data-gallery="5">
+            <img src="https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?auto=format&fit=crop&w=900&q=80" alt="Коттедж Премиум" loading="lazy">
+            <div class="gallery__overlay"><span>«Премиум» — кедровый коттедж</span></div>
+          </div>
+          <!-- Row 3 -->
+          <div class="gallery__item gallery__item--wide" data-gallery="6">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Дом в процессе отделки" loading="lazy">
+            <div class="gallery__overlay"><span>Готовый дом — сдача клиенту</span></div>
+          </div>
+          <div class="gallery__item" data-gallery="7">
+            <img src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&w=500&q=80" alt="Дом на закате" loading="lazy">
+            <div class="gallery__overlay"><span>«Шале» — вечерний вид</span></div>
+          </div>
+          <div class="gallery__item" data-gallery="8">
+            <img src="https://images.unsplash.com/photo-1505843513577-22bb7d21e455?auto=format&fit=crop&w=500&q=80" alt="Процесс строительства" loading="lazy">
+            <div class="gallery__overlay"><span>Этап строительства «Лесной»</span></div>
+          </div>
+          <!-- Row 4 -->
+          <div class="gallery__item" data-gallery="9">
+            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=500&q=80" alt="Интерьер гостиной" loading="lazy">
+            <div class="gallery__overlay"><span>Гостиная «Премиум»</span></div>
+          </div>
+          <div class="gallery__item" data-gallery="10">
+            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=500&q=80" alt="Кухня деревянного дома" loading="lazy">
+            <div class="gallery__overlay"><span>Кухня «Скандинавский»</span></div>
+          </div>
+          <div class="gallery__item" data-gallery="11">
+            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=500&q=80" alt="Спальня" loading="lazy">
+            <div class="gallery__overlay"><span>Спальня «Лесной»</span></div>
+          </div>
+          <div class="gallery__item" data-gallery="12">
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=500&q=80" alt="Терраса дома" loading="lazy">
+            <div class="gallery__overlay"><span>Терраса «Шале»</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ LIGHTBOX ═══════════════════════ -->
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox__overlay"></div>
+      <button class="lightbox__close" aria-label="Закрыть">&times;</button>
+      <button class="lightbox__prev" aria-label="Назад">&#8249;</button>
+      <button class="lightbox__next" aria-label="Вперёд">&#8250;</button>
+      <div class="lightbox__content">
+        <img id="lightboxImg" src="" alt="">
+        <p class="lightbox__caption" id="lightboxCaption"></p>
+      </div>
+      <div class="lightbox__counter" id="lightboxCounter"></div>
+    </div>
+
+    <!-- ═══════════════════════ BLOCK 4: CONSULTANT ═══════════════════════ -->
+    <section class="consultant section" id="consultation">
+      <div class="container">
+        <h2 class="section-title text-center" data-animate="fade-up">Ваш персональный консультант</h2>
+        <div class="consultant__grid">
+          <div class="consultant__text" data-animate="fade-right">
+            <p class="block-text">Консультация и подбор проекта — <strong>бесплатно.</strong></p>
+            <p class="block-text">
+              Мы помогаем:<br>
+              — выбрать подходящий дом<br>
+              — рассчитать стоимость<br>
+              — подобрать материалы
+            </p>
+            <p class="block-text">С вами будет работать персональный специалист, который ведёт проект от идеи до реализации.</p>
+            <a href="#quiz" class="btn btn--primary btn--lg">Получить консультацию</a>
+          </div>
+          <div class="consultant__image" data-animate="fade-left">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Эксперт по строительству деревянных домов" loading="lazy">
+            <p class="consultant__caption">Александр Иванов — эксперт по строительству домов</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ BLOCK 5: WHY US ═══════════════════════ -->
+    <section class="why-us section" id="why">
+      <div class="container">
+        <h2 class="section-title text-center" data-animate="fade-up">Почему выбирают нас</h2>
+        <div class="why-us__grid">
+
+          <div class="why-card glass-card" data-animate="fade-up" data-delay="0">
+            <span class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <div>
+              <h4>Контроль качества</h4>
+              <p>Многоступенчатая проверка на каждом этапе строительства. Выезд технадзора включён в стоимость.</p>
+            </div>
+          </div>
+
+          <div class="why-card glass-card" data-animate="fade-up" data-delay="80">
+            <span class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            </span>
+            <div>
+              <h4>Гарантия</h4>
+              <p>Даём письменную гарантию на конструкцию дома 5 лет и на все выполненные работы.</p>
+            </div>
+          </div>
+
+          <div class="why-card glass-card" data-animate="fade-up" data-delay="160">
+            <span class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            </span>
+            <div>
+              <h4>Прозрачные цены</h4>
+              <p>Смета фиксируется в договоре. Никаких скрытых платежей и неожиданных доплат.</p>
+            </div>
+          </div>
+
+          <div class="why-card glass-card" data-animate="fade-up" data-delay="240">
+            <span class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </span>
+            <div>
+              <h4>Сроки без задержек</h4>
+              <p>Соблюдаем сроки, прописанные в договоре. За каждый день просрочки предусмотрена неустойка.</p>
+            </div>
+          </div>
+
+          <div class="why-card glass-card" data-animate="fade-up" data-delay="320">
+            <span class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </span>
+            <div>
+              <h4>Опыт</h4>
+              <p>Более 12 лет на рынке. Построено свыше 300 домов по всей России.</p>
+            </div>
+          </div>
+
+          <div class="why-card glass-card" data-animate="fade-up" data-delay="400">
+            <span class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </span>
+            <div>
+              <h4>Индивидуальный подход</h4>
+              <p>Каждый проект уникален. Работаем под ваши задачи, участок и бюджет.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ REVIEWS ═══════════════════════ -->
+    <section class="reviews section" id="reviews">
+      <div class="container">
+        <h2 class="section-title text-center" data-animate="fade-up">Что говорят клиенты</h2>
+        <p class="section-subtitle text-center" data-animate="fade-up" data-delay="100">Реальные отзывы людей, которые живут в наших домах</p>
+        <div class="reviews__grid" data-animate="fade-up" data-delay="200">
+
+          <div class="review-card glass-card">
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">«Строили дом «Лесной» 4 месяца. Всё чётко по срокам, прораб на связи 24/7. Первую зиму прошли при -30 — в доме +22 без проблем. Очень доволен, уже советую соседям.»</p>
+            <div class="review-card__author">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=80" alt="Алексей П." loading="lazy">
+              <div>
+                <strong>Алексей П.</strong>
+                <span>Москва · Проект «Лесной»</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card glass-card">
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">«Мы с мужем долго выбирали компанию. WoodHouse предложили съездить на уже построенные объекты — это решило всё. Качество видно сразу. Наш «Скандинавский» стоит второй год, ни одной трещины.»</p>
+            <div class="review-card__author">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="Марина К." loading="lazy">
+              <div>
+                <strong>Марина К.</strong>
+                <span>Санкт-Петербург · Проект «Скандинавский»</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card glass-card">
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">«Хотел дом-резиденцию. Получил именно это. Кедр, камин, умный дом — всё как обсуждали. Менеджер вёл проект от первого звонка до ключей. Результат превзошёл ожидания.»</p>
+            <div class="review-card__author">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=80&q=80" alt="Дмитрий В." loading="lazy">
+              <div>
+                <strong>Дмитрий В.</strong>
+                <span>Красноярск · Проект «Премиум»</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card glass-card">
+            <div class="review-card__stars">★★★★☆</div>
+            <p class="review-card__text">«Брали «Дачный» для летнего отдыха. Построили за 42 дня — быстрее, чем планировали! Бюджет выдержали точно. Жена в восторге от веранды. В следующем году берём баню у них же.»</p>
+            <div class="review-card__author">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=80&q=80" alt="Виктор Н." loading="lazy">
+              <div>
+                <strong>Виктор Н.</strong>
+                <span>Тула · Проект «Дачный»</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card glass-card">
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">«Клеёный брус «Сибирского» — лучшее решение для нашего климата. Первая зима -42°C: в доме тепло, расход газа минимальный. Инженер объяснял каждый узел. Профессионалы!»</p>
+            <div class="review-card__author">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" alt="Андрей С." loading="lazy">
+              <div>
+                <strong>Андрей С.</strong>
+                <span>Красноярск · Проект «Сибирский»</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card glass-card">
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">«Шале мечты — вот как я называю наш дом. Каменный цоколь, два балкона, камин. Каждое утро выхожу с кофе и чувствую себя в Тироле. Спасибо команде WoodHouse за внимание к деталям!»</p>
+            <div class="review-card__author">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=80&q=80" alt="Ольга М." loading="lazy">
+              <div>
+                <strong>Ольга М.</strong>
+                <span>Санкт-Петербург · Проект «Шале»</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ FAQ ═══════════════════════ -->
+    <section class="faq section" id="faq">
+      <div class="container">
+        <h2 class="section-title text-center" data-animate="fade-up">Часто задаваемые вопросы</h2>
+        <p class="section-subtitle text-center" data-animate="fade-up" data-delay="100">Отвечаем на вопросы, которые волнуют перед строительством</p>
+        <div class="faq__list" data-animate="fade-up" data-delay="200">
+
+          <div class="faq__item">
+            <button class="faq__question">
+              <span>Сколько стоит фундамент для деревянного дома?</span>
+              <span class="faq__icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <p>Стоимость фундамента зависит от типа и площади дома. Свайно-винтовой — от 80 000 ₽ (самый доступный). Ленточный — от 150 000 ₽. Монолитная плита — от 300 000 ₽. Тип фундамента мы подбираем после геологии участка — это бесплатно.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question">
+              <span>Даёте ли рассрочку или ипотеку на строительство?</span>
+              <span class="faq__icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <p>Да. Работаем с несколькими банками: Сбер, ВТБ, Дом.РФ. Ипотека на строительство — от 6% (сельская ипотека до 3%). Также предоставляем рассрочку от компании: 30% аванс, остаток — поэтапно по мере строительства. Менеджер подберёт оптимальный вариант.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question">
+              <span>Как долго строится дом зимой? Можно ли строить в мороз?</span>
+              <span class="faq__icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <p>Да, строим круглый год. Зимнее строительство имеет свои плюсы: лес заготавливают именно зимой (меньше влаги), сваи вкручивают даже при -40°C. Заливку фундамента при морозах делаем с подогревом и противоморозными добавками. Срок практически не меняется — 3–5 месяцев.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question">
+              <span>Сколько времени занимает строительство под ключ?</span>
+              <span class="faq__icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <p>Зависит от проекта: каркасный дом 65 м² — 45 дней. Дом из профилированного бруса 120 м² — 90 дней. Дом из клеёного бруса 180 м² — 120 дней. Премиум-проект из кедра 240 м² — 150–180 дней. Сроки фиксируются в договоре с неустойкой за каждый день просрочки.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question">
+              <span>Нужно ли мне получать разрешение на строительство?</span>
+              <span class="faq__icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <p>Для жилого дома на ИЖС до 3 этажей — достаточно уведомления о начале строительства (не разрешение). Мы полностью берём этот процесс на себя: подаём уведомление, получаем ответ от администрации, регистрируем дом в Росреестре после сдачи. Всё включено в стоимость проекта.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question">
+              <span>Какую гарантию вы даёте на дом?</span>
+              <span class="faq__icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <p>Даём письменную гарантию: 5 лет на конструктив (фундамент, стены, кровля), 3 года на инженерные системы (электрика, водоснабжение, отопление), 1 год на отделочные работы. Гарантия фиксируется в договоре. При обнаружении дефектов выезжаем в течение 3 рабочих дней.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question">
+              <span>Можно ли внести изменения в типовой проект?</span>
+              <span class="faq__icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <p>Конечно. Любой типовой проект мы адаптируем под вас: изменить планировку, добавить террасу или гараж, поменять материал стен или кровли, сдвинуть окна — всё возможно. Адаптация типового проекта стоит от 15 000 ₽. Индивидуальный проект с нуля — от 50 000 ₽.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question">
+              <span>Вы работаете в других регионах или только в Москве?</span>
+              <span class="faq__icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <p>Работаем по всей России — уже в 47 регионах. Выезжаем сами: геодезист, прораб, бригада. Доставляем материалы со своих складов в Москве, Новосибирске, Красноярске. Для дальних регионов организуем логистику. Расстояние не является проблемой — звоните, обсудим.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ MAP ═══════════════════════ -->
+    <section class="map-section section" id="map">
+      <div class="container">
+        <h2 class="section-title text-center" data-animate="fade-up">География наших проектов</h2>
+        <p class="section-subtitle text-center" data-animate="fade-up" data-delay="100">Построили дома в 47 регионах России</p>
+        <div class="map-section__wrap" data-animate="fade-up" data-delay="200">
+          <div id="russiaMap" class="map-section__map"></div>
+          <div class="map-section__legend">
+            <div class="map-legend__item"><span class="map-legend__dot map-legend__dot--built"></span>Построенный дом</div>
+            <div class="map-legend__item"><span class="map-legend__dot map-legend__dot--active"></span>Активная стройка</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ CALCULATOR ═══════════════════════ -->
+    <section class="calc section" id="calculator">
+      <div class="container">
+        <h2 class="section-title text-center" data-animate="fade-up">Рассчитайте стоимость дома</h2>
+        <p class="section-subtitle text-center" data-animate="fade-up" data-delay="100">Укажите параметры — получите предварительный расчёт за секунды</p>
+
+        <div class="calc__grid" data-animate="fade-up" data-delay="200">
+
+          <!-- Left: form -->
+          <div class="calc__form glass-card">
+
+            <!-- Площадь — slider -->
+            <div class="calc__field">
+              <label class="calc__label">
+                Площадь дома
+                <span class="calc__value" id="calcAreaValue">100 м²</span>
+              </label>
+              <input type="range" class="calc__range" id="calcArea" min="30" max="350" value="100" step="5">
+              <div class="calc__range-labels"><span>30 м²</span><span>350 м²</span></div>
+            </div>
+
+            <!-- Этажность -->
+            <div class="calc__field">
+              <label class="calc__label">Количество этажей</label>
+              <div class="calc__buttons" id="calcFloors">
+                <button class="calc__btn active" data-value="1">1 этаж</button>
+                <button class="calc__btn" data-value="2">2 этажа</button>
+                <button class="calc__btn" data-value="3">Мансарда</button>
+              </div>
+            </div>
+
+            <!-- Материал -->
+            <div class="calc__field">
+              <label class="calc__label">Материал стен</label>
+              <div class="calc__buttons" id="calcMaterial">
+                <button class="calc__btn" data-value="frame">Каркас</button>
+                <button class="calc__btn active" data-value="profiled">Проф. брус</button>
+                <button class="calc__btn" data-value="glued">Клеёный брус</button>
+                <button class="calc__btn" data-value="log">Бревно</button>
+              </div>
+            </div>
+
+            <!-- Фундамент -->
+            <div class="calc__field">
+              <label class="calc__label">Тип фундамента</label>
+              <div class="calc__buttons" id="calcFoundation">
+                <button class="calc__btn active" data-value="screw">Свайный</button>
+                <button class="calc__btn" data-value="strip">Ленточный</button>
+                <button class="calc__btn" data-value="slab">Плита</button>
+              </div>
+            </div>
+
+            <!-- Кровля -->
+            <div class="calc__field">
+              <label class="calc__label">Кровля</label>
+              <div class="calc__buttons" id="calcRoof">
+                <button class="calc__btn active" data-value="metal">Металлочерепица</button>
+                <button class="calc__btn" data-value="soft">Мягкая кровля</button>
+                <button class="calc__btn" data-value="natural">Натуральная</button>
+              </div>
+            </div>
+
+            <!-- Доп. опции — чекбоксы -->
+            <div class="calc__field">
+              <label class="calc__label">Дополнительно</label>
+              <div class="calc__checks">
+                <label class="calc__check">
+                  <input type="checkbox" id="calcTerrace" value="terrace">
+                  <span class="calc__check-box"></span>
+                  Терраса / веранда
+                </label>
+                <label class="calc__check">
+                  <input type="checkbox" id="calcWarm" value="warm">
+                  <span class="calc__check-box"></span>
+                  Утепление (зимний вариант)
+                </label>
+                <label class="calc__check">
+                  <input type="checkbox" id="calcEngineering" value="engineering">
+                  <span class="calc__check-box"></span>
+                  Инженерные коммуникации
+                </label>
+                <label class="calc__check">
+                  <input type="checkbox" id="calcInterior" value="interior">
+                  <span class="calc__check-box"></span>
+                  Чистовая отделка
+                </label>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right: result -->
+          <div class="calc__result">
+            <div class="calc__result-card glass-card">
+              <div class="calc__result-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                <span>Предварительная стоимость</span>
+              </div>
+
+              <div class="calc__result-price" id="calcTotalPrice">3 500 000 ₽</div>
+
+              <div class="calc__result-breakdown" id="calcBreakdown">
+                <!-- filled by JS -->
+              </div>
+
+              <div class="calc__result-note">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Точную стоимость рассчитает менеджер после выезда на участок
+              </div>
+
+              <a href="#quiz" class="btn btn--primary btn--full calc__result-btn">Получить точный расчёт</a>
+            </div>
+
+            <!-- Срок -->
+            <div class="calc__result-card glass-card calc__timeline">
+              <div class="calc__timeline-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Ориентировочный срок</span>
+              </div>
+              <div class="calc__timeline-value" id="calcTimeline">60–90 дней</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ BLOCK 6: CATALOG ═══════════════════════ -->
+    <section class="catalog section">
+      <div class="container">
+        <h2 class="section-title text-center" data-animate="fade-up">Посмотреть все проекты домов</h2>
+        <div class="catalog__grid">
+          <div class="catalog__image" data-animate="fade-right">
+            <img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=900&q=80&crop=top" alt="Каталог проектов деревянных домов" loading="lazy">
+          </div>
+          <div class="catalog__text" data-animate="fade-left">
+            <p class="block-text">Полный каталог домов доступен в нашем проектном портфеле.</p>
+            <p class="block-text">
+              Вы можете:<br>
+              — выбрать готовый проект<br>
+              — заказать индивидуальный<br>
+              — получить расчет стоимости
+            </p>
+            <p class="block-text">Мы поможем подобрать оптимальное решение под ваш бюджет.</p>
+            <a href="#houses" class="btn btn--primary btn--lg">Смотреть каталог</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ BLOCK 7: QUIZ / CHAT ═══════════════════════ -->
+    <section class="quiz section" id="quiz">
+      <div class="quiz__inner">
+        <div class="quiz__header">
+          <h2 class="section-title text-center">Подберём дом под вас</h2>
+          <p class="quiz__subtitle">Ответьте на несколько вопросов — получите персональный расчёт</p>
+        </div>
+
+        <div class="quiz__card glass-card" id="quizCard">
+
+          <div class="quiz__progress-wrap">
+            <div class="quiz__progress-bar">
+              <div class="quiz__progress-fill" id="progressFill"></div>
+            </div>
+            <span class="quiz__progress-label" id="progressLabel">1 / 5</span>
+          </div>
+
+          <!-- Step 1 -->
+          <div class="quiz__step active" data-step="1">
+            <p class="quiz__question">Как вас зовут?</p>
+            <div class="quiz__input-wrap">
+              <input type="text" class="quiz__input" id="quizName" placeholder="Введите ваше имя" autocomplete="given-name">
+            </div>
+            <div class="quiz__nav">
+              <button class="btn btn--ghost quiz__back" disabled>← Назад</button>
+              <button class="btn btn--primary quiz__next" data-field="quizName">Далее →</button>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="quiz__step" data-step="2">
+            <p class="quiz__question">Какой дом вас интересует?</p>
+            <div class="quiz__options">
+              <button class="quiz__option" data-value="Для проживания">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                Для проживания
+              </button>
+              <button class="quiz__option" data-value="Дача">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                Дача
+              </button>
+              <button class="quiz__option" data-value="Баня">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                Баня
+              </button>
+            </div>
+            <div class="quiz__nav">
+              <button class="btn btn--ghost quiz__back">← Назад</button>
+              <button class="btn btn--primary quiz__next" disabled>Далее →</button>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="quiz__step" data-step="3">
+            <p class="quiz__question">Какая площадь дома?</p>
+            <div class="quiz__options">
+              <button class="quiz__option" data-value="до 100 м²">до 100 м²</button>
+              <button class="quiz__option" data-value="100–150 м²">100–150 м²</button>
+              <button class="quiz__option" data-value="150+ м²">150+ м²</button>
+            </div>
+            <div class="quiz__nav">
+              <button class="btn btn--ghost quiz__back">← Назад</button>
+              <button class="btn btn--primary quiz__next" disabled>Далее →</button>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="quiz__step" data-step="4">
+            <p class="quiz__question">Когда планируете строительство?</p>
+            <div class="quiz__options">
+              <button class="quiz__option" data-value="Скоро">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                Скоро
+              </button>
+              <button class="quiz__option" data-value="В течение года">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                В течение года
+              </button>
+              <button class="quiz__option" data-value="Просто изучаю">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                Просто изучаю
+              </button>
+            </div>
+            <div class="quiz__nav">
+              <button class="btn btn--ghost quiz__back">← Назад</button>
+              <button class="btn btn--primary quiz__next" disabled>Далее →</button>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="quiz__step" data-step="5">
+            <p class="quiz__question">Оставьте ваш номер телефона</p>
+            <div class="quiz__input-wrap">
+              <input type="tel" class="quiz__input" id="quizPhone" placeholder="+7 (___) ___-__-__" autocomplete="tel">
+            </div>
+            <div class="quiz__nav">
+              <button class="btn btn--ghost quiz__back">← Назад</button>
+              <button class="btn btn--primary quiz__submit" data-field="quizPhone">Получить расчёт</button>
+            </div>
+          </div>
+
+          <!-- Final screen -->
+          <div class="quiz__step quiz__final" data-step="final">
+            <div class="quiz__success-icon">
+              <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="28" stroke="#4A7C59" stroke-width="2"/><polyline points="18,30 26,38 42,22" stroke="#4A7C59" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <p class="quiz__success-title">Спасибо! Заявка отправлена</p>
+            <p class="quiz__success-text">Мы свяжемся с вами в ближайшее время</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="container footer__top-inner">
+
+        <div class="footer__form-col">
+          <h3 class="footer__form-title">Свяжитесь с нами</h3>
+          <form class="lead-form lead-form--footer" id="footerForm" novalidate>
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Имя" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" name="phone" placeholder="Телефон" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
+          </form>
+        </div>
+
+        <div class="footer__info-col">
+          <div class="footer__warning glass-card">
+            <h4 class="footer__warning-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              Внимание!
+            </h4>
+            <p>Работайте только с официальными представителями.</p>
+            <p>Мы гарантируем качество только при заказе напрямую через нашу компанию.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <a href="#" class="footer__logo">
+          <svg class="logo-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <rect width="36" height="36" rx="8" fill="rgba(74,124,89,0.15)"/>
+            <polygon points="18,5 31,16 31,30 5,30 5,16" fill="none" stroke="#4A7C59" stroke-width="1.5"/>
+            <polygon points="18,4 32,16 4,16" fill="#4A7C59"/>
+            <rect x="14" y="21" width="8" height="9" fill="#4A7C59" rx="1"/>
+          </svg>
+          <span class="logo-text">Wood<strong>House</strong></span>
+        </a>
+        <p class="footer__copy">© 2025 WoodHouse. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating contact buttons -->
+  <div class="float-btns" id="floatBtns">
+    <a href="https://t.me/ksncidncsncd_bot" target="_blank" rel="noopener" class="float-btn float-btn--tg" aria-label="Написать в Telegram">
+      <span class="float-btn__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></span>
+      <span class="float-btn__label">Telegram</span>
+    </a>
+    <a href="https://wa.me/79991234567" target="_blank" rel="noopener" class="float-btn float-btn--wa" aria-label="Написать в WhatsApp">
+      <span class="float-btn__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></span>
+      <span class="float-btn__label">WhatsApp</span>
+    </a>
+  </div>
+
+  <!-- Exit intent popup -->
+  <div class="exit-popup" id="exitPopup">
+    <div class="exit-popup__overlay" id="exitPopupOverlay"></div>
+    <div class="exit-popup__box glass-card">
+      <button class="exit-popup__close" id="exitPopupClose">✕</button>
+      <div class="exit-popup__emoji">🎁</div>
+      <h3 class="exit-popup__title">Подождите!</h3>
+      <p class="exit-popup__text">Получите скидку <strong>5%</strong> на любой проект. Оставьте номер — менеджер перезвонит в течение 15 минут.</p>
+      <form class="exit-popup__form" id="exitPopupForm" novalidate>
+        <input type="tel" placeholder="+7 (___) ___-__-__" required class="exit-popup__input" id="exitPhone">
+        <button type="submit" class="btn btn--primary btn--full">Хочу скидку 5%</button>
+      </form>
+      <p class="exit-popup__disclaimer">Без спама. Только один звонок от менеджера.</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
