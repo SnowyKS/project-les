@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450">
+  <defs><linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1C1008"/><stop offset="100%" stop-color="#2D1B0E"/></linearGradient></defs>
+  <rect width="600" height="450" fill="url(#bg3)"/>
+  <!-- Баня -->
+  <rect x="140" y="220" width="320" height="190" fill="#3D2314" rx="4"/>
+  <polygon points="100,220 300,80 500,220" fill="#2D1B0E"/>
+  <rect x="220" y="320" width="160" height="90" fill="#1A0F0A" rx="4"/>
+  <rect x="155" y="245" width="100" height="80" fill="#4A3020" rx="6"/>
+  <rect x="345" y="245" width="100" height="80" fill="#4A3020" rx="6"/>
+  <rect x="159" y="249" width="92" height="72" fill="#E8732A" rx="4" opacity="0.3"/>
+  <rect x="349" y="249" width="92" height="72" fill="#E8732A" rx="4" opacity="0.3"/>
+  <!-- Дым из трубы -->
+  <rect x="270" y="60" width="20" height="40" fill="#2D1B0E"/>
+  <ellipse cx="280" cy="55" rx="15" ry="10" fill="#555" opacity="0.4"/>
+  <ellipse cx="275" cy="40" rx="20" ry="12" fill="#666" opacity="0.3"/>
+  <rect x="0" y="400" width="600" height="50" fill="#0D1505"/>
+  <ellipse cx="300" cy="412" rx="250" ry="18" fill="#162B10" opacity="0.8"/>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <defs><linearGradient id="bgcat" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0D1F0A"/><stop offset="100%" stop-color="#1C1008"/></linearGradient></defs>
+  <rect width="700" height="500" fill="url(#bgcat)"/>
+  <!-- Grid of 4 house thumbnails -->
+  <!-- House 1 -->
+  <rect x="20" y="20" width="320" height="220" fill="#1A3312" rx="12"/>
+  <rect x="40" y="80" width="280" height="140" fill="#3D2314" rx="4"/>
+  <polygon points="20,80 180,20 340,80" fill="#2D1B0E"/>
+  <rect x="120" y="150" width="80" height="70" fill="#1A0F0A" rx="3"/>
+  <rect x="55" y="100" width="80" height="60" fill="#4A3020" rx="4"/>
+  <rect x="245" y="100" width="80" height="60" fill="#4A3020" rx="4"/>
+  <rect x="58" y="103" width="74" height="54" fill="#C8973C" rx="3" opacity="0.3"/>
+  <rect x="248" y="103" width="74" height="54" fill="#C8973C" rx="3" opacity="0.3"/>
+  <!-- House 2 -->
+  <rect x="360" y="20" width="320" height="220" fill="#162B10" rx="12"/>
+  <rect x="380" y="80" width="280" height="140" fill="#4A3020" rx="4"/>
+  <polygon points="360,80 520,20 680,80" fill="#3D2314"/>
+  <rect x="460" y="150" width="80" height="70" fill="#1A0F0A" rx="3"/>
+  <rect x="395" y="100" width="80" height="60" fill="#5A3D25" rx="4"/>
+  <rect x="585" y="100" width="80" height="60" fill="#5A3D25" rx="4"/>
+  <rect x="398" y="103" width="74" height="54" fill="#C8973C" rx="3" opacity="0.25"/>
+  <rect x="588" y="103" width="74" height="54" fill="#C8973C" rx="3" opacity="0.25"/>
+  <!-- House 3 -->
+  <rect x="20" y="260" width="320" height="220" fill="#1C1008" rx="12"/>
+  <rect x="40" y="320" width="280" height="140" fill="#3D2314" rx="4"/>
+  <polygon points="20,320 180,260 340,320" fill="#2D1B0E"/>
+  <rect x="120" y="390" width="80" height="70" fill="#1A0F0A" rx="3"/>
+  <rect x="55" y="340" width="80" height="60" fill="#4A3020" rx="4"/>
+  <rect x="245" y="340" width="80" height="60" fill="#4A3020" rx="4"/>
+  <rect x="58" y="343" width="74" height="54" fill="#E8732A" rx="3" opacity="0.25"/>
+  <rect x="248" y="343" width="74" height="54" fill="#E8732A" rx="3" opacity="0.25"/>
+  <!-- House 4 -->
+  <rect x="360" y="260" width="320" height="220" fill="#0F2A18" rx="12"/>
+  <rect x="380" y="320" width="280" height="140" fill="#4A3020" rx="4"/>
+  <polygon points="360,320 520,260 680,320" fill="#3D2314"/>
+  <rect x="460" y="390" width="80" height="70" fill="#1A0F0A" rx="3"/>
+  <rect x="395" y="340" width="80" height="60" fill="#5A3D25" rx="4"/>
+  <rect x="585" y="340" width="80" height="60" fill="#5A3D25" rx="4"/>
+  <rect x="398" y="343" width="74" height="54" fill="#C8973C" rx="3" opacity="0.3"/>
+  <rect x="588" y="343" width="74" height="54" fill="#C8973C" rx="3" opacity="0.3"/>
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0D1F0A"/>
+      <stop offset="100%" stop-color="#1A3312"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A2E0F"/>
+      <stop offset="100%" stop-color="#0A1505"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#sky)"/>
+  <rect y="480" width="1200" height="220" fill="url(#ground)"/>
+  <!-- Trees background -->
+  <ellipse cx="100" cy="420" rx="60" ry="120" fill="#0F2209" opacity="0.8"/>
+  <ellipse cx="200" cy="400" rx="55" ry="110" fill="#142B0D" opacity="0.9"/>
+  <ellipse cx="1050" cy="410" rx="65" ry="130" fill="#0F2209" opacity="0.8"/>
+  <ellipse cx="1130" cy="390" rx="50" ry="105" fill="#142B0D" opacity="0.9"/>
+  <!-- House -->
+  <rect x="350" y="280" width="500" height="220" fill="#3D2314" rx="4"/>
+  <polygon points="300,280 600,100 900,280" fill="#2D1B0E"/>
+  <rect x="520" y="380" width="80" height="120" fill="#1A0F0A" rx="4"/>
+  <rect x="380" y="320" width="100" height="80" fill="#4A3020" rx="6"/>
+  <rect x="720" y="320" width="100" height="80" fill="#4A3020" rx="6"/>
+  <!-- Warm light in windows -->
+  <rect x="385" y="325" width="90" height="70" fill="#C8973C" rx="4" opacity="0.4"/>
+  <rect x="725" y="325" width="90" height="70" fill="#C8973C" rx="4" opacity="0.4"/>
+  <!-- Snow/lawn -->
+  <ellipse cx="600" cy="500" rx="300" ry="30" fill="#1E3515" opacity="0.6"/>
+  <!-- Stars -->
+  <circle cx="150" cy="80" r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="300" cy="50" r="1" fill="white" opacity="0.6"/>
+  <circle cx="800" cy="60" r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="950" cy="90" r="1" fill="white" opacity="0.5"/>
+  <circle cx="1050" cy="40" r="2" fill="white" opacity="0.6"/>
+</svg>
