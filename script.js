@@ -77,6 +77,16 @@ document.addEventListener('DOMContentLoaded', () => {
   ═══════════════════════════════════════ */
   const TG_BOT_TOKEN = '8789925612:AAFvUxmS75VpT7CWAFMjcrlLOGGs37t5neE';
   const TG_CHAT_ID = '7602635557';
+  const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbw8h8AD_WsWbtmYN8SNDZPXhgP6EsJzVYRRDjlpqKaAR0CHPLH2K6L76QduetfAlOmN/exec';
+
+  function sendToSheets(data) {
+    return fetch(SHEETS_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }).catch(() => {});
+  }
 
   function sendToTelegram(text) {
     const url = 'https://api.telegram.org/bot' + TG_BOT_TOKEN + '/sendMessage';
@@ -135,6 +145,15 @@ document.addEventListener('DOMContentLoaded', () => {
       msg += '🕐 ' + now;
 
       sendToTelegram(msg);
+
+      // Send to Google Sheets
+      sendToSheets({
+        type: 'form',
+        name: data.name || '',
+        phone: data.phone || '',
+        email: data.email || '',
+        source: formName
+      });
 
       const btn = form.querySelector('button[type="submit"]');
       const origText = btn.textContent;
@@ -749,6 +768,20 @@ document.addEventListener('DOMContentLoaded', () => {
       msg += '🕐 ' + now;
 
       sendToTelegram(msg);
+
+      // Send quiz to Google Sheets
+      sendToSheets({
+        type: 'quiz',
+        name: quizData.quizName || '',
+        phone: quizData.quizPhone || '',
+        houseType: quizData.step2 || '',
+        area: quizData.step3 || '',
+        material: quizData.step4Material || '',
+        budget: quizData.step5 || '',
+        deadline: quizData.step4 || '',
+        options: quizData.step6 || '',
+        source: 'Квиз на сайте'
+      });
 
       try { localStorage.removeItem('woodhouse_quiz'); } catch (_) {}
 
