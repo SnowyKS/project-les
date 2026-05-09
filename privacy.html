@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Политика конфиденциальности WoodHouse — условия обработки персональных данных">
+  <meta name="robots" content="noindex, follow">
+  <title>Политика конфиденциальности — WoodHouse</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0f1a0c;
+      --bg2: #16221100;
+      --card: #192b14;
+      --green: #4a8a38;
+      --green-light: #5aa346;
+      --text: #d8ddd4;
+      --text-muted: #8a9485;
+      --white: #f5f7f3;
+      --gold: #c8853a;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+    a { color: var(--green-light); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Header */
+    .header {
+      background: rgba(15,26,12,0.96);
+      border-bottom: 1px solid rgba(74,138,56,0.2);
+      padding: 0 40px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo img { width: 36px; height: 36px; }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .back-btn:hover { color: var(--green-light); text-decoration: none; }
+
+    /* Content */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 24px 100px;
+    }
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .page-date {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 48px;
+    }
+    .page-date span { color: var(--green-light); }
+
+    /* Sections */
+    .section {
+      margin-bottom: 48px;
+      background: var(--card);
+      border: 1px solid rgba(74,138,56,0.15);
+      border-radius: 16px;
+      padding: 32px 36px;
+    }
+    .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--green);
+      border-radius: 50%;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin: 20px 0 8px;
+    }
+    p { color: var(--text); margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+    ul, ol {
+      padding-left: 20px;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    li { margin-bottom: 6px; }
+    .highlight {
+      background: rgba(74,138,56,0.12);
+      border-left: 3px solid var(--green);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .contact-box {
+      background: rgba(200,133,58,0.08);
+      border: 1px solid rgba(200,133,58,0.25);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-top: 24px;
+    }
+    .contact-box p { margin-bottom: 6px; }
+    .contact-box strong { color: var(--gold); }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.9rem;
+    }
+    th {
+      background: rgba(74,138,56,0.15);
+      color: var(--white);
+      text-align: left;
+      padding: 10px 14px;
+      font-weight: 500;
+    }
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      color: var(--text);
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid rgba(74,138,56,0.15);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <a href="index.html" class="logo">
+    <img src="img/favicon.svg" alt="WoodHouse">
+    WoodHouse
+  </a>
+  <a href="index.html" class="back-btn">
+    ← Вернуться на сайт
+  </a>
+</header>
+
+<main class="container">
+  <h1 class="page-title">Политика конфиденциальности</h1>
+  <p class="page-date">Последнее обновление: <span>9 мая 2025 г.</span></p>
+
+  <div class="highlight">
+    Используя сайт WoodHouse и заполняя формы, вы соглашаетесь с условиями настоящей Политики конфиденциальности. Пожалуйста, внимательно прочитайте её перед отправкой своих данных.
+  </div>
+
+  <!-- 1 -->
+  <div class="section">
+    <div class="section-num">1</div>
+    <h2>Общие положения</h2>
+    <p>Настоящая Политика конфиденциальности (далее — «Политика») описывает, как <strong>ООО «ВудХаус»</strong> (далее — «Оператор», «Компания», «мы») собирает, использует, хранит и защищает персональные данные пользователей сайта <strong>woodhouse-doma.ru</strong> (далее — «Сайт»).</p>
+    <p>Политика разработана в соответствии с требованиями Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных» и иного применимого законодательства Российской Федерации.</p>
+    <p>Оператор обрабатывает персональные данные только с согласия субъекта персональных данных, выраженного путём заполнения и отправки форм на Сайте.</p>
+  </div>
+
+  <!-- 2 -->
+  <div class="section">
+    <div class="section-num">2</div>
+    <h2>Какие данные мы собираем</h2>
+    <p>При взаимодействии с формами на Сайте мы можем собирать следующие персональные данные:</p>
+    <table>
+      <tr>
+        <th>Данные</th>
+        <th>Когда собираются</th>
+        <th>Обязательность</th>
+      </tr>
+      <tr>
+        <td>Имя (ФИО или имя)</td>
+        <td>Формы обратной связи, квиз-калькулятор</td>
+        <td>Обязательно</td>
+      </tr>
+      <tr>
+        <td>Номер телефона</td>
+        <td>Все формы, всплывающее окно</td>
+        <td>Обязательно</td>
+      </tr>
+      <tr>
+        <td>Адрес электронной почты</td>
+        <td>Форма «Свяжитесь с нами»</td>
+        <td>Необязательно</td>
+      </tr>
+      <tr>
+        <td>Ответы квиза</td>
+        <td>Квиз-калькулятор стоимости</td>
+        <td>Необязательно</td>
+      </tr>
+      <tr>
+        <td>Дата и время обращения</td>
+        <td>Автоматически при отправке формы</td>
+        <td>Автоматически</td>
+      </tr>
+      <tr>
+        <td>Техническая информация (IP, браузер, UTM-метки)</td>
+        <td>Автоматически при посещении</td>
+        <td>Автоматически</td>
+      </tr>
+    </table>
+    <p>Мы <strong>не собираем</strong> платёжные данные, паспортные данные или иные чувствительные категории персональных данных.</p>
+  </div>
+
+  <!-- 3 -->
+  <div class="section">
+    <div class="section-num">3</div>
+    <h2>Где хранятся ваши данные</h2>
+    <p>Ваши данные хранятся в следующих системах:</p>
+    <h3>База данных (Supabase / PostgreSQL)</h3>
+    <p>Заявки и результаты квиза сохраняются в защищённой базе данных. Сервера расположены в дата-центрах с соблюдением требований GDPR и 152-ФЗ. Доступ к БД имеет только администратор компании.</p>
+    <h3>Telegram-бот</h3>
+    <p>Уведомления о новых заявках автоматически отправляются в служебный Telegram-чат компании для оперативной обработки. Данные хранятся в рамках политики хранения сообщений Telegram.</p>
+    <h3>Срок хранения</h3>
+    <p>Персональные данные хранятся не дольше, чем это необходимо для достижения целей их обработки, но не более <strong>3 лет</strong> с момента получения последнего запроса от вас, либо до отзыва согласия.</p>
+  </div>
+
+  <!-- 4 -->
+  <div class="section">
+    <div class="section-num">4</div>
+    <h2>Цели обработки данных</h2>
+    <p>Мы обрабатываем ваши персональные данные исключительно в следующих целях:</p>
+    <ul>
+      <li>Обратная связь — ответ на ваши запросы и вопросы</li>
+      <li>Оказание услуг — подготовка коммерческих предложений по строительству</li>
+      <li>Консультации — связь менеджера с потенциальным клиентом</li>
+      <li>Улучшение качества услуг — анализ запросов и пожеланий клиентов</li>
+      <li>Выполнение законодательных требований</li>
+    </ul>
+    <p>Мы <strong>не продаём</strong> и <strong>не передаём</strong> ваши данные третьим лицам в маркетинговых или коммерческих целях.</p>
+  </div>
+
+  <!-- 5 -->
+  <div class="section">
+    <div class="section-num">5</div>
+    <h2>Передача данных третьим лицам</h2>
+    <p>Ваши данные могут быть переданы третьим лицам только в следующих случаях:</p>
+    <ul>
+      <li><strong>Telegram Messenger Inc.</strong> — для доставки уведомлений через Telegram Bot API (политика конфиденциальности: telegram.org/privacy)</li>
+      <li><strong>Supabase Inc.</strong> — для хранения данных в облачной базе данных (политика: supabase.com/privacy)</li>
+      <li><strong>По требованию закона</strong> — в случаях, предусмотренных законодательством РФ (судебные запросы, запросы государственных органов)</li>
+    </ul>
+    <p>Все третьи стороны обязаны соблюдать конфиденциальность ваших данных и использовать их только в целях предоставления соответствующих услуг.</p>
+  </div>
+
+  <!-- 6 -->
+  <div class="section">
+    <div class="section-num">6</div>
+    <h2>Ваши права</h2>
+    <p>В соответствии с 152-ФЗ вы имеете право:</p>
+    <ul>
+      <li><strong>Получить информацию</strong> о том, какие данные о вас хранятся</li>
+      <li><strong>Исправить</strong> неточные или устаревшие данные</li>
+      <li><strong>Удалить</strong> свои данные («право на забвение»)</li>
+      <li><strong>Отозвать согласие</strong> на обработку персональных данных в любой момент</li>
+      <li><strong>Ограничить обработку</strong> своих данных</li>
+      <li><strong>Подать жалобу</strong> в Роскомнадзор (rkn.gov.ru)</li>
+    </ul>
+    <p>Для реализации своих прав направьте запрос на электронную почту: <a href="mailto:info@woodhouse-doma.ru">info@woodhouse-doma.ru</a>. Мы ответим в течение 10 рабочих дней.</p>
+  </div>
+
+  <!-- 7 -->
+  <div class="section">
+    <div class="section-num">7</div>
+    <h2>Cookies и аналитика</h2>
+    <p>Сайт использует технические cookie-файлы, необходимые для корректной работы:</p>
+    <ul>
+      <li>Хранение состояния таймера акции (localStorage)</li>
+      <li>Технические cookie для работы Leaflet-карты</li>
+    </ul>
+    <p>Мы <strong>не используем</strong> рекламные cookie, системы слежения (Facebook Pixel, Google Ads) или счётчики аналитики (Google Analytics, Яндекс.Метрика) без вашего явного согласия.</p>
+    <p>Вы можете отключить cookie в настройках браузера, однако это может повлиять на работу некоторых функций сайта.</p>
+  </div>
+
+  <!-- 8 -->
+  <div class="section">
+    <div class="section-num">8</div>
+    <h2>Безопасность данных</h2>
+    <p>Мы принимаем технические и организационные меры для защиты ваших данных:</p>
+    <ul>
+      <li>Передача данных по защищённому протоколу HTTPS</li>
+      <li>Ограниченный доступ к базе данных (только администратор)</li>
+      <li>Шифрование соединения с базой данных</li>
+      <li>Регулярное обновление программного обеспечения</li>
+    </ul>
+    <p>Несмотря на принимаемые меры, ни одна система не может гарантировать абсолютную безопасность. В случае утечки данных мы уведомим вас в течение 72 часов.</p>
+  </div>
+
+  <!-- 9 -->
+  <div class="section">
+    <div class="section-num">9</div>
+    <h2>Изменения в Политике</h2>
+    <p>Мы оставляем за собой право вносить изменения в настоящую Политику. Действующая версия всегда доступна на этой странице. Дата последнего обновления указана в начале документа.</p>
+    <p>При существенных изменениях мы уведомим вас через сайт или по контактным данным, которые вы оставили.</p>
+  </div>
+
+  <!-- 10 -->
+  <div class="section">
+    <div class="section-num">10</div>
+    <h2>Контактная информация</h2>
+    <p>По вопросам обработки персональных данных обращайтесь:</p>
+    <div class="contact-box">
+      <p><strong>Оператор:</strong> ООО «ВудХаус»</p>
+      <p><strong>Адрес:</strong> г. Москва, Россия</p>
+      <p><strong>Email:</strong> <a href="mailto:info@woodhouse-doma.ru">info@woodhouse-doma.ru</a></p>
+      <p><strong>Телефон:</strong> <a href="tel:+78001234567">+7 (800) 123-45-67</a></p>
+      <p><strong>Telegram:</strong> <a href="https://t.me/ksncidncsncd_bot" target="_blank">@woodhouse_bot</a></p>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <p>© 2025 WoodHouse. Все права защищены. &nbsp;|&nbsp; <a href="index.html">На главную</a></p>
+</footer>
+
+</body>
+</html>
