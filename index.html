@@ -1157,6 +1157,12 @@
             <div class="form-group">
               <input type="email" name="email" placeholder="Email" required>
             </div>
+            <div class="form-group form-group--consent">
+              <label class="consent-label">
+                <input type="checkbox" name="consent" required class="consent-checkbox">
+                <span>Я согласен(а) с <a href="privacy.html" target="_blank" class="consent-link">политикой конфиденциальности</a> и даю согласие на обработку персональных данных</span>
+              </label>
+            </div>
             <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
           </form>
         </div>
@@ -1186,7 +1192,7 @@
           </svg>
           <span class="logo-text">Wood<strong>House</strong></span>
         </a>
-        <p class="footer__copy">© 2025 WoodHouse. Все права защищены.</p>
+        <p class="footer__copy">© 2025 WoodHouse. Все права защищены. &nbsp;|&nbsp; <a href="privacy.html" style="color:var(--text-muted,#888);text-decoration:none;" onmouseover="this.style.color='#5aa346'" onmouseout="this.style.color='var(--text-muted,#888)'">Политика конфиденциальности</a></p>
       </div>
     </div>
   </footer>
@@ -1215,7 +1221,7 @@
         <input type="tel" placeholder="+7 (___) ___-__-__" required class="exit-popup__input" id="exitPhone">
         <button type="submit" class="btn btn--primary btn--full">Хочу скидку 5%</button>
       </form>
-      <p class="exit-popup__disclaimer">Без спама. Только один звонок от менеджера.</p>
+      <p class="exit-popup__disclaimer">Без спама. Только один звонок от менеджера.<br><a href="privacy.html" target="_blank" style="color:#5aa346;font-size:0.8rem;">Политика конфиденциальности</a></p>
     </div>
   </div>
 

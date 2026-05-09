@@ -2297,6 +2297,53 @@ h4 { font-size: 1.15rem; font-family: 'Inter', sans-serif; font-weight: 600; }
   box-shadow: 0 16px 40px rgba(0,0,0,0.3), 0 0 16px rgba(74,124,89,0.1);
 }
 
+/* Consent checkbox */
+.form-group--consent { margin-top: 4px; }
+.consent-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+.consent-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  margin-top: 1px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.consent-checkbox:checked {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+.consent-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 6px;
+  height: 10px;
+  border: 2px solid white;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+.consent-link {
+  color: var(--primary-light, #5aa346);
+  text-decoration: underline;
+}
+.consent-link:hover { color: var(--primary); }
+
 /* 13. FAQ hover highlight */
 .faq__item {
   transition: border-color 0.3s, background 0.3s;
