@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WoodHouse — Админ панель</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1a0a;
+      --bg2: #162010;
+      --bg3: #1d2b14;
+      --green: #3d7a2e;
+      --green-light: #52a33e;
+      --gold: #c8853a;
+      --text: #e8f0e0;
+      --text-muted: #8a9e7a;
+      --border: rgba(255,255,255,0.08);
+      --card: #1a2812;
+      --danger: #e05252;
+      --success: #4caf6e;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+    /* ── LOGIN ── */
+    #loginScreen {
+      display: flex; align-items: center; justify-content: center;
+      min-height: 100vh;
+      background: radial-gradient(ellipse at center, #1d3010 0%, #0a1106 100%);
+    }
+    .login-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px 40px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+    }
+    .login-logo { font-size: 2.5rem; margin-bottom: 8px; }
+    .login-box h1 { font-size: 1.4rem; font-weight: 600; margin-bottom: 6px; }
+    .login-box p { color: var(--text-muted); font-size: 0.875rem; margin-bottom: 32px; }
+    .login-input {
+      width: 100%; padding: 14px 16px;
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 10px; color: var(--text); font-size: 1rem;
+      margin-bottom: 16px; outline: none;
+      transition: border-color 0.2s;
+    }
+    .login-input:focus { border-color: var(--green); }
+    .login-btn {
+      width: 100%; padding: 14px;
+      background: var(--green); border: none; border-radius: 10px;
+      color: white; font-size: 1rem; font-weight: 600;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .login-btn:hover { background: var(--green-light); }
+    .login-error { color: var(--danger); font-size: 0.85rem; margin-top: 10px; display: none; }
+
+    /* ── LAYOUT ── */
+    #adminScreen { display: none; }
+    .sidebar {
+      position: fixed; left: 0; top: 0; bottom: 0; width: 240px;
+      background: var(--bg2); border-right: 1px solid var(--border);
+      padding: 24px 0; z-index: 100;
+      display: flex; flex-direction: column;
+    }
+    .sidebar-logo { padding: 0 24px 24px; border-bottom: 1px solid var(--border); }
+    .sidebar-logo .logo-icon { font-size: 1.5rem; }
+    .sidebar-logo span { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+    .sidebar-logo .version { font-size: 0.7rem; color: var(--text-muted); }
+    .sidebar-nav { padding: 16px 12px; flex: 1; }
+    .nav-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); padding: 0 12px; margin: 16px 0 6px; }
+    .nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 12px; border-radius: 8px;
+      cursor: pointer; transition: background 0.15s; color: var(--text-muted);
+      font-size: 0.875rem; margin-bottom: 2px;
+    }
+    .nav-item:hover { background: var(--bg3); color: var(--text); }
+    .nav-item.active { background: rgba(61,122,46,0.2); color: var(--green-light); }
+    .nav-item .icon { font-size: 1.1rem; width: 20px; text-align: center; }
+    .sidebar-footer { padding: 16px 24px; border-top: 1px solid var(--border); }
+    .logout-btn {
+      display: flex; align-items: center; gap: 8px;
+      color: var(--text-muted); font-size: 0.85rem; cursor: pointer;
+      transition: color 0.2s; background: none; border: none;
+    }
+    .logout-btn:hover { color: var(--danger); }
+
+    .main { margin-left: 240px; padding: 32px; min-height: 100vh; }
+
+    /* ── HEADER ── */
+    .page-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
+    .page-title { font-size: 1.5rem; font-weight: 700; }
+    .page-subtitle { color: var(--text-muted); font-size: 0.875rem; margin-top: 2px; }
+    .refresh-btn {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 18px; background: var(--bg3);
+      border: 1px solid var(--border); border-radius: 10px;
+      color: var(--text); font-size: 0.875rem; cursor: pointer;
+      transition: all 0.2s;
+    }
+    .refresh-btn:hover { background: var(--green); border-color: var(--green); }
+
+    /* ── STATS ── */
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px; }
+    .stat-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 20px 24px;
+    }
+    .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .stat-value { font-size: 2rem; font-weight: 700; }
+    .stat-value.green { color: var(--green-light); }
+    .stat-value.gold { color: var(--gold); }
+    .stat-sub { font-size: 0.75rem; color: var(--text-muted); margin-top: 4px; }
+
+    /* ── TABS ── */
+    .tabs { display: flex; gap: 4px; margin-bottom: 20px; background: var(--bg2); padding: 4px; border-radius: 10px; width: fit-content; }
+    .tab {
+      padding: 8px 20px; border-radius: 7px; cursor: pointer;
+      font-size: 0.875rem; font-weight: 500; transition: all 0.2s;
+      color: var(--text-muted); border: none; background: none;
+    }
+    .tab.active { background: var(--green); color: white; }
+
+    /* ── TABLE ── */
+    .table-wrap {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden;
+    }
+    .table-toolbar {
+      display: flex; align-items: center; gap: 12px;
+      padding: 16px 20px; border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .search-input {
+      flex: 1; min-width: 200px; padding: 8px 14px;
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text); font-size: 0.875rem;
+      outline: none;
+    }
+    .search-input:focus { border-color: var(--green); }
+    .export-btn {
+      padding: 8px 16px; background: rgba(61,122,46,0.15);
+      border: 1px solid rgba(61,122,46,0.3); border-radius: 8px;
+      color: var(--green-light); font-size: 0.85rem; cursor: pointer;
+      transition: all 0.2s;
+    }
+    .export-btn:hover { background: var(--green); color: white; border-color: var(--green); }
+    .count-badge {
+      padding: 4px 10px; background: var(--bg3);
+      border-radius: 20px; font-size: 0.75rem; color: var(--text-muted);
+    }
+
+    table { width: 100%; border-collapse: collapse; }
+    thead { background: var(--bg2); }
+    th {
+      padding: 12px 16px; text-align: left;
+      font-size: 0.72rem; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--text-muted);
+      font-weight: 600; white-space: nowrap;
+    }
+    td { padding: 14px 16px; font-size: 0.875rem; border-top: 1px solid var(--border); }
+    tr:hover td { background: rgba(255,255,255,0.02); }
+    .td-date { color: var(--text-muted); font-size: 0.8rem; white-space: nowrap; }
+    .td-name { font-weight: 600; }
+    .td-phone { color: var(--green-light); }
+    .td-email { color: var(--text-muted); }
+    .td-badge {
+      display: inline-block; padding: 3px 8px;
+      border-radius: 20px; font-size: 0.72rem; font-weight: 500;
+    }
+    .badge-quiz { background: rgba(200,133,58,0.15); color: var(--gold); }
+    .badge-form { background: rgba(61,122,46,0.15); color: var(--green-light); }
+
+    /* ── LOADING / EMPTY ── */
+    .loading-wrap, .empty-wrap {
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; padding: 60px; color: var(--text-muted);
+      gap: 12px;
+    }
+    .spinner {
+      width: 32px; height: 32px; border: 3px solid var(--border);
+      border-top-color: var(--green); border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .empty-icon { font-size: 2.5rem; }
+    .empty-text { font-size: 0.875rem; }
+
+    /* ── PANELS ── */
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .sidebar { width: 64px; }
+      .sidebar-logo span, .nav-item span, .sidebar-footer span, .nav-label { display: none; }
+      .main { margin-left: 64px; padding: 20px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      table { font-size: 0.8rem; }
+      th, td { padding: 10px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════ LOGIN ══════════════ -->
+<div id="loginScreen">
+  <div class="login-box">
+    <div class="login-logo">🏠</div>
+    <h1>WoodHouse Admin</h1>
+    <p>Панель управления заявками</p>
+    <input type="password" id="passwordInput" class="login-input" placeholder="Введите пароль" onkeydown="if(event.key==='Enter')login()">
+    <button class="login-btn" onclick="login()">Войти</button>
+    <p class="login-error" id="loginError">Неверный пароль</p>
+  </div>
+</div>
+
+<!-- ══════════════ ADMIN ══════════════ -->
+<div id="adminScreen">
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="logo-icon">🏠</span>
+        <div>
+          <span>WoodHouse</span>
+          <div class="version">Admin v1.0</div>
+        </div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-label">Основное</div>
+      <div class="nav-item active" onclick="showPanel('leads')">
+        <span class="icon">📋</span>
+        <span>Заявки</span>
+      </div>
+      <div class="nav-item" onclick="showPanel('quiz')">
+        <span class="icon">🎯</span>
+        <span>Результаты квиза</span>
+      </div>
+      <div class="nav-label">Аналитика</div>
+      <div class="nav-item" onclick="showPanel('stats')">
+        <span class="icon">📊</span>
+        <span>Статистика</span>
+      </div>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="logout-btn" onclick="logout()">
+        <span>🚪</span>
+        <span>Выйти</span>
+      </button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <!-- Статистика вверху -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Всего заявок</div>
+        <div class="stat-value green" id="statTotal">—</div>
+        <div class="stat-sub">форм + квизов</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Заявки с форм</div>
+        <div class="stat-value" id="statForms">—</div>
+        <div class="stat-sub">контактные формы</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Прошли квиз</div>
+        <div class="stat-value gold" id="statQuiz">—</div>
+        <div class="stat-sub">полных анкет</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Сегодня</div>
+        <div class="stat-value" id="statToday">—</div>
+        <div class="stat-sub">новых лидов</div>
+      </div>
+    </div>
+
+    <!-- Панель: Заявки -->
+    <div id="panel-leads" class="panel active">
+      <div class="page-header">
+        <div>
+          <div class="page-title">Заявки с форм</div>
+          <div class="page-subtitle">Контактные данные клиентов</div>
+        </div>
+        <button class="refresh-btn" onclick="loadData()">🔄 Обновить</button>
+      </div>
+      <div class="table-wrap">
+        <div class="table-toolbar">
+          <input type="text" class="search-input" placeholder="🔍 Поиск по имени или телефону..." oninput="filterTable('leads', this.value)">
+          <button class="export-btn" onclick="exportCSV('leads')">⬇ CSV</button>
+          <span class="count-badge" id="leadsCount">0 записей</span>
+        </div>
+        <div id="leadsTableWrap"></div>
+      </div>
+    </div>
+
+    <!-- Панель: Квиз -->
+    <div id="panel-quiz" class="panel">
+      <div class="page-header">
+        <div>
+          <div class="page-title">Результаты квиза</div>
+          <div class="page-subtitle">Ответы клиентов на вопросы калькулятора</div>
+        </div>
+        <button class="refresh-btn" onclick="loadData()">🔄 Обновить</button>
+      </div>
+      <div class="table-wrap">
+        <div class="table-toolbar">
+          <input type="text" class="search-input" placeholder="🔍 Поиск..." oninput="filterTable('quiz', this.value)">
+          <button class="export-btn" onclick="exportCSV('quiz')">⬇ CSV</button>
+          <span class="count-badge" id="quizCount">0 записей</span>
+        </div>
+        <div id="quizTableWrap"></div>
+      </div>
+    </div>
+
+    <!-- Панель: Статистика -->
+    <div id="panel-stats" class="panel">
+      <div class="page-header">
+        <div>
+          <div class="page-title">Статистика</div>
+          <div class="page-subtitle">Аналитика по заявкам</div>
+        </div>
+      </div>
+      <div id="statsContent" style="color:var(--text-muted);padding:40px;text-align:center;">
+        Загрузка статистики...
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw8h8AD_WsWbtmYN8SNDZPXhgP6EsJzVYRRDjlpqKaAR0CHPLH2K6L76QduetfAlOmN/exec';
+  const ADMIN_PASS = 'woodhouse2025';
+
+  let allData = { 'Квиз': [], 'Заявки': [] };
+  let currentPanel = 'leads';
+
+  // ── AUTH ──
+  function login() {
+    const pass = document.getElementById('passwordInput').value;
+    if (pass === ADMIN_PASS) {
+      document.getElementById('loginScreen').style.display = 'none';
+      document.getElementById('adminScreen').style.display = 'block';
+      sessionStorage.setItem('wh_auth', '1');
+      loadData();
+    } else {
+      document.getElementById('loginError').style.display = 'block';
+      document.getElementById('passwordInput').style.borderColor = '#e05252';
+    }
+  }
+
+  function logout() {
+    sessionStorage.removeItem('wh_auth');
+    document.getElementById('adminScreen').style.display = 'none';
+    document.getElementById('loginScreen').style.display = 'flex';
+    document.getElementById('passwordInput').value = '';
+  }
+
+  // Auto-login if session active
+  if (sessionStorage.getItem('wh_auth')) {
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('adminScreen').style.display = 'block';
+    loadData();
+  }
+
+  // ── DATA ──
+  function loadData() {
+    showLoading();
+    const url = `${SCRIPT_URL}?action=getData&password=${ADMIN_PASS}&_=${Date.now()}`;
+    fetch(url)
+      .then(r => r.json())
+      .then(res => {
+        if (res.success) {
+          allData = res.data;
+          renderAll();
+        } else {
+          showError(res.error);
+        }
+      })
+      .catch(err => {
+        // Если CORS ошибка — показываем подсказку
+        showError('Не удалось загрузить данные. Убедитесь что Apps Script развёрнут с доступом "Все".');
+      });
+  }
+
+  function showLoading() {
+    ['leadsTableWrap', 'quizTableWrap'].forEach(id => {
+      document.getElementById(id).innerHTML = '<div class="loading-wrap"><div class="spinner"></div><span>Загрузка данных...</span></div>';
+    });
+  }
+
+  function showError(msg) {
+    ['leadsTableWrap', 'quizTableWrap'].forEach(id => {
+      document.getElementById(id).innerHTML = `<div class="empty-wrap"><div class="empty-icon">⚠️</div><div class="empty-text">${msg}</div></div>`;
+    });
+  }
+
+  // ── RENDER ──
+  function renderAll() {
+    renderLeads(allData['Заявки'] || []);
+    renderQuiz(allData['Квиз'] || []);
+    renderStats();
+    updateStatCards();
+  }
+
+  function renderLeads(rows) {
+    const wrap = document.getElementById('leadsTableWrap');
+    document.getElementById('leadsCount').textContent = rows.length + ' записей';
+    if (!rows.length) {
+      wrap.innerHTML = '<div class="empty-wrap"><div class="empty-icon">📭</div><div class="empty-text">Заявок пока нет</div></div>';
+      return;
+    }
+    wrap.innerHTML = `<table>
+      <thead><tr>
+        <th>Дата</th><th>Имя</th><th>Телефон</th><th>Email</th><th>Источник</th>
+      </tr></thead>
+      <tbody>
+        ${[...rows].reverse().map(r => `<tr>
+          <td class="td-date">${r['Дата']||'—'}</td>
+          <td class="td-name">${r['Имя']||'—'}</td>
+          <td class="td-phone">${r['Телефон']||'—'}</td>
+          <td class="td-email">${r['Email']||'—'}</td>
+          <td><span class="td-badge badge-form">${r['Источник']||'Сайт'}</span></td>
+        </tr>`).join('')}
+      </tbody>
+    </table>`;
+  }
+
+  function renderQuiz(rows) {
+    const wrap = document.getElementById('quizTableWrap');
+    document.getElementById('quizCount').textContent = rows.length + ' записей';
+    if (!rows.length) {
+      wrap.innerHTML = '<div class="empty-wrap"><div class="empty-icon">📭</div><div class="empty-text">Результатов квиза пока нет</div></div>';
+      return;
+    }
+    wrap.innerHTML = `<table>
+      <thead><tr>
+        <th>Дата</th><th>Имя</th><th>Телефон</th><th>Тип дома</th><th>Площадь</th><th>Материал</th><th>Бюджет</th><th>Срок</th><th>Доп. опции</th>
+      </tr></thead>
+      <tbody>
+        ${[...rows].reverse().map(r => `<tr>
+          <td class="td-date">${r['Дата']||'—'}</td>
+          <td class="td-name">${r['Имя']||'—'}</td>
+          <td class="td-phone">${r['Телефон']||'—'}</td>
+          <td>${r['Тип дома']||'—'}</td>
+          <td>${r['Площадь']||'—'}</td>
+          <td>${r['Материал']||'—'}</td>
+          <td style="color:var(--gold)">${r['Бюджет']||'—'}</td>
+          <td>${r['Срок']||'—'}</td>
+          <td style="font-size:0.8rem;color:var(--text-muted)">${r['Опции']||'—'}</td>
+        </tr>`).join('')}
+      </tbody>
+    </table>`;
+  }
+
+  function renderStats() {
+    const leads = allData['Заявки'] || [];
+    const quiz = allData['Квиз'] || [];
+    const all = [...leads, ...quiz];
+
+    // Группировка по дням
+    const byDay = {};
+    all.forEach(r => {
+      const date = (r['Дата'] || '').split(',')[0].trim();
+      if (date) byDay[date] = (byDay[date] || 0) + 1;
+    });
+    const days = Object.entries(byDay).sort((a,b) => b[1]-a[1]).slice(0,7);
+
+    document.getElementById('statsContent').innerHTML = `
+      <div style="display:grid;gap:20px;max-width:700px;margin:0 auto;text-align:left">
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px">
+          <div style="font-weight:600;margin-bottom:16px;font-size:1rem">🗓 Заявки по дням</div>
+          ${days.length ? days.map(([date, count]) => `
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+              <div style="min-width:90px;font-size:0.85rem;color:var(--text-muted)">${date}</div>
+              <div style="flex:1;background:var(--bg2);border-radius:4px;height:8px;overflow:hidden">
+                <div style="width:${Math.min(count/Math.max(...days.map(d=>d[1]))*100,100)}%;height:100%;background:var(--green);border-radius:4px"></div>
+              </div>
+              <div style="font-weight:600;min-width:24px;text-align:right">${count}</div>
+            </div>`).join('') : '<div style="color:var(--text-muted)">Данных пока нет</div>'}
+        </div>
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px">
+          <div style="font-weight:600;margin-bottom:16px">📊 Источники заявок</div>
+          <div style="display:flex;gap:16px;flex-wrap:wrap">
+            <div style="flex:1;min-width:140px;text-align:center;padding:20px;background:var(--bg2);border-radius:12px">
+              <div style="font-size:2rem;font-weight:700;color:var(--green-light)">${leads.length}</div>
+              <div style="font-size:0.8rem;color:var(--text-muted);margin-top:4px">Контактные формы</div>
+            </div>
+            <div style="flex:1;min-width:140px;text-align:center;padding:20px;background:var(--bg2);border-radius:12px">
+              <div style="font-size:2rem;font-weight:700;color:var(--gold)">${quiz.length}</div>
+              <div style="font-size:0.8rem;color:var(--text-muted);margin-top:4px">Квиз-калькулятор</div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  function updateStatCards() {
+    const leads = allData['Заявки'] || [];
+    const quiz = allData['Квиз'] || [];
+    const total = leads.length + quiz.length;
+
+    const today = new Date().toLocaleDateString('ru-RU');
+    const todayAll = [...leads, ...quiz].filter(r => (r['Дата']||'').startsWith(today)).length;
+
+    document.getElementById('statTotal').textContent = total;
+    document.getElementById('statForms').textContent = leads.length;
+    document.getElementById('statQuiz').textContent = quiz.length;
+    document.getElementById('statToday').textContent = todayAll;
+  }
+
+  // ── PANELS ──
+  function showPanel(name) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.getElementById('panel-' + name).classList.add('active');
+    event.currentTarget.classList.add('active');
+    currentPanel = name;
+  }
+
+  // ── SEARCH ──
+  function filterTable(type, query) {
+    const q = query.toLowerCase();
+    const data = type === 'leads' ? (allData['Заявки']||[]) : (allData['Квиз']||[]);
+    const filtered = q ? data.filter(r => Object.values(r).some(v => String(v).toLowerCase().includes(q))) : data;
+    if (type === 'leads') renderLeads(filtered);
+    else renderQuiz(filtered);
+  }
+
+  // ── EXPORT CSV ──
+  function exportCSV(type) {
+    const data = type === 'leads' ? (allData['Заявки']||[]) : (allData['Квиз']||[]);
+    if (!data.length) return alert('Нет данных для экспорта');
+    const headers = Object.keys(data[0]);
+    const rows = data.map(r => headers.map(h => '"' + String(r[h]||'').replace(/"/g,'""') + '"').join(','));
+    const csv = '﻿' + [headers.join(','), ...rows].join('\n');
+    const a = document.createElement('a');
+    a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+    a.download = `woodhouse-${type}-${new Date().toLocaleDateString('ru-RU')}.csv`;
+    a.click();
+  }
+</script>
+</body>
+</html>
