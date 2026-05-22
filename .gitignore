@@ -1,1 +1,9 @@
 .claude/settings.json
+node_modules/
+*.docx
+~$*
+create-report.js
+figma-*.js
+figma-*.json
+package.json
+package-lock.json
