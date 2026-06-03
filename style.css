@@ -2298,23 +2298,26 @@ h4 { font-size: 1.15rem; font-family: 'Inter', sans-serif; font-weight: 600; }
 }
 
 /* Consent checkbox */
-.form-group--consent { margin-top: 4px; }
+.form-group--consent { margin-top: 4px; margin-bottom: 14px; }
 .consent-label {
   display: flex;
   align-items: flex-start;
   gap: 10px;
   cursor: pointer;
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: var(--c-text-muted);
   line-height: 1.4;
 }
-.consent-checkbox {
+/* высокая специфичность — перебиваем общий стиль .form-group input */
+.form-group--consent input.consent-checkbox {
   appearance: none;
   -webkit-appearance: none;
+  flex: 0 0 auto;
   width: 18px;
   height: 18px;
   min-width: 18px;
-  border: 2px solid rgba(255,255,255,0.2);
+  padding: 0;
+  border: 2px solid rgba(255,255,255,0.25);
   border-radius: 4px;
   background: transparent;
   cursor: pointer;
@@ -2322,27 +2325,31 @@ h4 { font-size: 1.15rem; font-family: 'Inter', sans-serif; font-weight: 600; }
   margin-top: 1px;
   transition: border-color 0.2s, background 0.2s;
 }
-.consent-checkbox:checked {
-  background: var(--primary);
-  border-color: var(--primary);
+.form-group--consent input.consent-checkbox:focus {
+  border-color: var(--c-green);
+  box-shadow: none;
 }
-.consent-checkbox:checked::after {
+.form-group--consent input.consent-checkbox:checked {
+  background: var(--c-green);
+  border-color: var(--c-green);
+}
+.form-group--consent input.consent-checkbox:checked::after {
   content: '';
   position: absolute;
   left: 4px;
   top: 1px;
-  width: 6px;
-  height: 10px;
-  border: 2px solid white;
+  width: 5px;
+  height: 9px;
+  border: 2px solid #fff;
   border-top: none;
   border-left: none;
   transform: rotate(45deg);
 }
 .consent-link {
-  color: var(--primary-light, #5aa346);
+  color: var(--c-green-light);
   text-decoration: underline;
 }
-.consent-link:hover { color: var(--primary); }
+.consent-link:hover { color: var(--c-green); }
 
 /* 13. FAQ hover highlight */
 .faq__item {
@@ -2350,4 +2357,156 @@ h4 { font-size: 1.15rem; font-family: 'Inter', sans-serif; font-weight: 600; }
 }
 .faq__item:hover {
   background: rgba(255,255,255,0.03);
+}
+
+/* ══════════════════════════════════════════
+   PREMIUM ENHANCEMENTS v2 — depth, light & motion
+   (CSS-only, layered on top; reduced-motion safe)
+══════════════════════════════════════════ */
+
+/* ── E1. Ambient aurora glow behind dark sections ── */
+.hero,
+.consultant,
+.calc,
+.why-us {
+  position: relative;
+  isolation: isolate;
+}
+.hero::after,
+.why-us::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  width: 60vmax;
+  height: 60vmax;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.4;
+  background: radial-gradient(circle at center, rgba(74,124,89,0.30) 0%, transparent 70%);
+  animation: auroraDrift 18s ease-in-out infinite alternate;
+}
+.hero::after  { top: -20vmax; right: -15vmax; z-index: 1; }
+.why-us::before {
+  bottom: -25vmax; left: -15vmax;
+  background: radial-gradient(circle at center, rgba(200,151,60,0.18) 0%, transparent 70%);
+  animation-duration: 22s;
+}
+/* keep section content above the ambient glow */
+.why-us > .container,
+.consultant > .container,
+.calc > .container { position: relative; z-index: 1; }
+@keyframes auroraDrift {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(4vmax, 3vmax) scale(1.12); }
+}
+
+/* ── E2. Primary button sheen sweep on hover ── */
+.btn--primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255,255,255,0.35),
+    transparent
+  );
+  transform: skewX(-18deg);
+  transition: left 0.6s var(--ease);
+  pointer-events: none;
+  z-index: 1;
+}
+.btn--primary:hover::before { left: 130%; }
+
+/* ── E3. Gradient-border glow on key cards ── */
+.glass-card,
+.project-card,
+.why-card,
+.review-card {
+  position: relative;
+}
+.project-card::after,
+.why-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(90,144,104,0.55), rgba(200,151,60,0.35));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease);
+  pointer-events: none;
+}
+.project-card:hover::after,
+.why-card:hover::after { opacity: 1; }
+
+/* ── E4. Animated gradient on scroll progress bar ── */
+.scroll-progress {
+  background: linear-gradient(90deg, var(--c-green), var(--c-accent), var(--c-green-light)) !important;
+  background-size: 200% 100% !important;
+  animation: progressShift 4s linear infinite;
+  box-shadow: 0 0 10px rgba(74,124,89,0.5);
+}
+@keyframes progressShift {
+  0%   { background-position: 0% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ── E5. Section title underline grow animation ──
+   Underline is visible by default; only titles that are themselves
+   scroll-animated start collapsed and grow in when revealed. */
+.section-title[data-animate]::after {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.7s var(--ease) 0.15s;
+}
+.section-title[data-animate].text-center::after { transform-origin: center; }
+.section-title[data-animate].visible::after { transform: scaleX(1); }
+
+/* ── E6. Floating hero highlight word ── */
+.hero__title .highlight-word {
+  animation: floatWord 5s ease-in-out infinite;
+}
+@keyframes floatWord {
+  0%, 100% { transform: rotate(-1deg) translateY(0); }
+  50%      { transform: rotate(-1deg) translateY(-6px); }
+}
+
+/* ── E7. Subtle film-grain texture overlay for premium depth ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.025;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── E8. Nav link & icon-button micro-polish ── */
+.nav-link { transition: color var(--t) var(--ease), transform 0.2s var(--ease); }
+.nav-link:hover { transform: translateY(-1px); }
+
+/* ── E9. Smooth, snappier image reveal in cards ── */
+.project-card__img img,
+.gallery__item img,
+.problem-item__image img {
+  will-change: transform;
+}
+
+/* ── E10. Respect reduced-motion for new ambient motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .hero::after,
+  .why-us::before,
+  .hero__title .highlight-word,
+  .scroll-progress { animation: none !important; }
+  .section-title::after { transform: scaleX(1) !important; }
 }
