@@ -24,10 +24,10 @@
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
   <!-- Предзагрузка LCP-изображения (фон героя) для быстрой отрисовки -->
   <link rel="preload" as="image" fetchpriority="high" href="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1280&q=70">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
-  <!-- Leaflet CSS грузим неблокирующе (карта внизу страницы) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css"></noscript>
+  <!-- Шрифты грузим неблокирующе (display=swap не даёт исчезнуть тексту) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet"></noscript>
+  <!-- Leaflet (CSS+JS) подгружается лениво из script.js при приближении карты -->
   <link rel="stylesheet" href="style.css">
 
   <!-- JSON-LD Structured Data -->
@@ -1230,7 +1230,6 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 </html>

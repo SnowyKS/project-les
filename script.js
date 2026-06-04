@@ -1086,10 +1086,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if (typeof L !== 'undefined') {
-    initLeafletMap();
-  } else {
-    window.addEventListener('load', initLeafletMap);
-  }
+  // Ленивая загрузка Leaflet: CSS+JS грузятся только когда карта подъезжает
+  // к экрану — это убирает блокирующий CSS и неиспользуемый JS из старта.
+  (function lazyLeaflet() {
+    const mapEl = document.getElementById('russiaMap');
+    if (!mapEl) return;
+    if (typeof L !== 'undefined') { initLeafletMap(); return; }
+
+    let triggered = false;
+    const load = () => {
+      if (triggered) return;
+      triggered = true;
+      const css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = 'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css';
+      document.head.appendChild(css);
+      const js = document.createElement('script');
+      js.src = 'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js';
+      js.onload = initLeafletMap;
+      document.body.appendChild(js);
+    };
+
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        if (entries.some(e => e.isIntersecting)) { load(); io.disconnect(); }
+      }, { rootMargin: '400px' });
+      io.observe(mapEl);
+    } else {
+      window.addEventListener('load', load);
+    }
+  })();
 
 });
