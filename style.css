@@ -1636,10 +1636,14 @@ h4 { font-size: 1.15rem; font-family: 'Inter', sans-serif; font-weight: 600; }
   :root { --section-gap: 72px; }
   .container { padding: 0 28px; }
 
+  /* одноколоночный герой: верх контента не должен уходить под шапку */
+  .hero { align-items: flex-start; }
   .hero__container {
     grid-template-columns: 1fr;
     max-width: 640px;
     margin: 0 auto;
+    padding-top: 112px;
+    padding-bottom: 56px;
   }
   .hero__form-wrap { max-width: 100%; }
 
