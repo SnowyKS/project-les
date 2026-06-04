@@ -40,7 +40,7 @@
    RESET
 ══════════════════════════════════════════ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; width: 100%; }
 body {
   font-family: 'Inter', system-ui, sans-serif;
   background: var(--c-dark);
@@ -493,6 +493,7 @@ h4 { font-size: 1.15rem; font-family: 'Inter', sans-serif; font-weight: 600; }
   padding: 5px 12px;
   border-radius: 20px;
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 .project-card__badge--green { background: rgba(74,124,89,0.85); }
 .project-card__badge--gold  { background: rgba(200,151,60,0.9); }
@@ -557,6 +558,7 @@ h4 { font-size: 1.15rem; font-family: 'Inter', sans-serif; font-weight: 600; }
   inset: 0;
   background: rgba(0,0,0,0.85);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 .project-modal__container {
   position: relative;
@@ -582,6 +584,7 @@ h4 { font-size: 1.15rem; font-family: 'Inter', sans-serif; font-weight: 600; }
   height: 44px;
   background: rgba(0,0,0,0.5);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255,255,255,0.15);
   border-radius: 50%;
   color: #fff;
@@ -957,6 +960,7 @@ h4 { font-size: 1.15rem; font-family: 'Inter', sans-serif; font-weight: 600; }
   justify-content: center;
   background: rgba(0,0,0,0.92);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.35s, visibility 0.35s;
@@ -1708,6 +1712,12 @@ h4 { font-size: 1.15rem; font-family: 'Inter', sans-serif; font-weight: 600; }
   .quiz__question { font-size: 1.4rem; }
 
   .footer__bottom-inner { flex-direction: column; text-align: center; }
+
+  /* Reveal-анимации: на узких экранах только вертикальный сдвиг.
+     Горизонтальный translateX(±32px) у ещё не появившихся блоков
+     вызывал выход контента за рамки (overflow) на телефонах. */
+  [data-animate="fade-left"],
+  [data-animate="fade-right"] { transform: translateY(28px); }
 }
 
 @media (max-width: 480px) {
@@ -2051,6 +2061,7 @@ h4 { font-size: 1.15rem; font-family: 'Inter', sans-serif; font-weight: 600; }
   inset: 0;
   background: rgba(0,0,0,0.8);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 .exit-popup__box {
   position: relative;
